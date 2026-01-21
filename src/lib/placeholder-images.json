@@ -1,3 +1,82 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-children-reading",
+      "description": "Group of children reading books together outdoors.",
+      "imageUrl": "https://images.unsplash.com/photo-1549737221-bef65e2604a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaGlsZHJlbiUyMHJlYWRpbmd8ZW58MHx8fHwxNzY5MDAwNDgwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "children reading"
+    },
+    {
+      "id": "group-happy-children",
+      "description": "A diverse group of happy children playing together.",
+      "imageUrl": "https://images.unsplash.com/photo-1607453998774-d533f65dac99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxoYXBweSUyMGNoaWxkcmVufGVufDB8fHx8MTc2OTAzNTYxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "happy children"
+    },
+    {
+      "id": "child-portrait-1",
+      "description": "Portrait of a smiling young girl.",
+      "imageUrl": "https://images.unsplash.com/photo-1608734265656-f035d3e7bcbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjaGlsZCUyMHBvcnRyYWl0fGVufDB8fHx8MTc2ODk3NDQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "child portrait"
+    },
+    {
+      "id": "child-portrait-2",
+      "description": "Portrait of a young boy looking thoughtfully.",
+      "imageUrl": "https://images.unsplash.com/photo-1608734265656-f035d3e7bcbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjaGlsZCUyMHBvcnRyYWl0fGVufDB8fHx8MTc2ODk3NDQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "child portrait"
+    },
+    {
+      "id": "child-portrait-3",
+      "description": "Portrait of a smiling young child playing.",
+      "imageUrl": "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaGlsZCUyMHBsYXlpbmd8ZW58MHx8fHwxNzY4OTk4NjE5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "child playing"
+    },
+    {
+      "id": "child-portrait-4",
+      "description": "Portrait of a young girl in a classroom.",
+      "imageUrl": "https://images.unsplash.com/photo-1758685733530-2c5210b03338?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjaGlsZCUyMGNsYXNzcm9vbXxlbnwwfHx8fDE3NjkwMzU2MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "child classroom"
+    },
+    {
+      "id": "child-portrait-5",
+      "description": "Portrait of a boy holding a soccer ball.",
+      "imageUrl": "https://images.unsplash.com/photo-1599876636829-f6780c077675?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2hpbGQlMjBzb2NjZXJ8ZW58MHx8fHwxNzY5MDM1NjEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "child soccer"
+    },
+    {
+      "id": "child-portrait-6",
+      "description": "Portrait of a girl painting a picture.",
+      "imageUrl": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjaGlsZCUyMHBhaW50aW5nfGVufDB8fHx8MTc2ODk4NDE1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "child painting"
+    },
+    {
+      "id": "story-community-build",
+      "description": "Community members working together to build a new school.",
+      "imageUrl": "https://images.unsplash.com/photo-1468421870903-4df1664ac249?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb21tdW5pdHklMjBidWlsZGluZ3xlbnwwfHx8fDE3NjkwMzU2MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "community building"
+    },
+    {
+      "id": "story-graduation-day",
+      "description": "A student celebrating on graduation day.",
+      "imageUrl": "https://images.unsplash.com/photo-1631131426242-0abfa7f209c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdHVkZW50JTIwZ3JhZHVhdGlvbnxlbnwwfHx8fDE3NjkwMzU2MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "student graduation"
+    },
+    {
+      "id": "story-clean-water",
+      "description": "A new well providing clean water to a village.",
+      "imageUrl": "https://images.unsplash.com/photo-1546531130-0f36255d9d49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjbGVhbiUyMHdhdGVyfGVufDB8fHx8MTc2OTAzNTYxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "clean water"
+    },
+    {
+      "id": "about-team",
+      "description": "The dedicated team of the foundation.",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcm9mZXNzaW9uYWwlMjB0ZWFtfGVufDB8fHx8MTc2OTAzNTYxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional team"
+    },
+    {
+      "id": "sponsorship-hero",
+      "description": "A sponsor and child writing letters to each other.",
+      "imageUrl": "https://images.unsplash.com/photo-1560785496-3c9d27877182?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaGlsZCUyMHdyaXRpbmd8ZW58MHx8fHwxNzY5MDM1NjEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "child writing"
+    }
+  ]
 }
