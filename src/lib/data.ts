@@ -1,3 +1,4 @@
+
 export type Child = {
   id: number;
   name: string;
@@ -8,16 +9,6 @@ export type Child = {
   dream: string;
   imageId: string;
   sponsorshipStatus: 'Available' | 'Sponsored';
-};
-
-export type Story = {
-  id: number;
-  slug: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  imageId: string;
-  date: string;
 };
 
 export const children: Child[] = [
@@ -86,35 +77,5 @@ export const children: Child[] = [
     dream: 'an actor',
     imageId: 'child-portrait-6',
     sponsorshipStatus: 'Sponsored',
-  },
-];
-
-export const stories: Story[] = [
-  {
-    id: 1,
-    slug: 'community-builds-a-new-school',
-    title: 'A Community Builds a New School',
-    excerpt: 'Through collective effort and generous donations, the village of Mwangaza now has a new school, bringing education closer to hundreds of children.',
-    content: '<p>The journey began with a simple dream: a safe and permanent place for the children of Mwangaza to learn. For years, classes were held under a large baobab tree, vulnerable to the whims of weather. Thanks to the "Build a School" initiative, supporters from around the world joined hands with local community members. </p><p>Volunteers and workers toiled for months, and the result is a beautiful four-classroom school building, complete with a small library and playground. Today, the sound of children learning fills the halls, a testament to what can be achieved when a community comes together for a common cause.</p>',
-    imageId: 'story-community-build',
-    date: '2023-10-15',
-  },
-  {
-    id: 2,
-    slug: 'esthers-journey-to-graduation',
-    title: "Esther's Journey to Graduation",
-    excerpt: "From a small village to a university graduate, Esther's story is one of perseverance, hope, and the impact of sponsorship.",
-    content: "<p>When Esther was sponsored at age 10, her dream of becoming a nurse seemed distant. With the support of her sponsor, she was able to stay in school, receive the necessary supplies, and focus on her studies. </p><p>Her hard work paid off when she earned a scholarship to a national university. Last month, Esther graduated with a degree in nursing. She is now back in her community, providing much-needed medical care and inspiring the next generation to dream big.</p>",
-    imageId: 'story-graduation-day',
-    date: '2023-09-20',
-  },
-  {
-    id: 3,
-    slug: 'clean-water-transforms-a-village',
-    title: 'Clean Water Transforms a Village',
-    excerpt: "The installation of a new well has brought not just clean water, but also health, and new opportunities to the village of Upendo.",
-    content: "<p>For the people of Upendo, access to clean water was a daily struggle. Women and children would walk miles each day to fetch water from a contaminated source, leading to widespread illness. </p><p>Through our 'Water for Life' project, a deep borehole well was drilled in the center of the village. The impact was immediate. Waterborne diseases have drastically reduced, children have more time to attend school, and women are able to engage in income-generating activities. The well has become the heart of the village, a source of life and hope.</p>",
-    imageId: 'story-clean-water',
-    date: '2023-08-05',
   },
 ];

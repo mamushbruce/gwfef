@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { HandHeart, Twitter, Facebook, Instagram } from "lucide-react";
 
@@ -11,7 +12,7 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               <li><Link href="/about" className="hover:text-primary-foreground">About Us</Link></li>
               <li><Link href="/sponsorship" className="hover:text-primary-foreground">Sponsor a Child</Link></li>
-              <li><Link href="/stories" className="hover:text-primary-foreground">Success Stories</Link></li>
+              <li><Link href="/impact" className="hover:text-primary-foreground">Our Impact</Link></li>
               <li><Link href="/donate" className="hover:text-primary-foreground">Donate</Link></li>
             </ul>
           </div>

@@ -113,6 +113,18 @@
       "description": "A newly built school building.",
       "imageUrl": "https://images.unsplash.com/photo-1728206348193-9b5ae74a7d32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzY2hvb2wlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjkwMTE0NjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "school building"
+    },
+    {
+      "id": "impact-hero",
+      "description": "Children in a classroom raising their hands.",
+      "imageUrl": "https://images.unsplash.com/photo-1588072432904-886af171a3c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGNsYXNzcm9vbXxlbnwwfHx8fDE3NjkwOTAwODB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "children classroom"
+    },
+    {
+      "id": "impact-life",
+      "description": "A woman helping a child in a rural community.",
+      "imageUrl": "https://images.unsplash.com/photo-1488521787991-ed7b2f28a727?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY2hpbGRyZW4lMjBoZWxwJTIwY29tbXVuaXR5fGVufDB8fHx8MTc2OTM5MjQwMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "community help"
     }
   ]
 }

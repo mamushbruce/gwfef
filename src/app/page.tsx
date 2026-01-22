@@ -1,17 +1,16 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, HeartHandshake, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { stories } from "@/lib/data";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function Home() {
   const featuredChildImage = PlaceHolderImages.find(p => p.id === 'child-portrait-1');
   const missionImage = PlaceHolderImages.find(p => p.id === 'group-happy-children');
-  const featuredStory = stories[0];
-  const featuredStoryImage = PlaceHolderImages.find(p => p.id === featuredStory.imageId);
+  const impactImage = PlaceHolderImages.find(p => p.id === 'story-community-build');
 
   return (
     <div className="flex flex-col">
@@ -131,21 +130,21 @@ export default function Home() {
               </div>
             </Card>
 
-            {featuredStory && featuredStoryImage && (
+            {impactImage && (
               <Card className="group relative col-span-1 row-span-1 flex flex-col overflow-hidden transition-transform duration-300 ease-in-out hover:scale-[1.02] hover:shadow-xl lg:col-span-2">
                 <Image
-                  src={featuredStoryImage.imageUrl}
-                  alt={featuredStoryImage.description}
-                  data-ai-hint={featuredStoryImage.imageHint}
+                  src={impactImage.imageUrl}
+                  alt={impactImage.description}
+                  data-ai-hint={impactImage.imageHint}
                   fill
                   className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="relative z-10 mt-auto flex flex-col p-6 text-white">
-                  <CardDescription className="text-white/80">Success Story</CardDescription>
-                  <CardTitle className="font-headline text-3xl">{featuredStory.title}</CardTitle>
+                  <CardDescription className="text-white/80">Our Impact</CardDescription>
+                  <CardTitle className="font-headline text-3xl">Stories of Transformation</CardTitle>
                   <Button asChild variant="link" className="mt-4 w-fit p-0 text-white">
-                    <Link href={`/stories/${featuredStory.slug}`}>Read More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                    <Link href="/impact">Read More <ArrowRight className="ml-2 h-4 w-4" /></Link>
                   </Button>
                 </div>
               </Card>
