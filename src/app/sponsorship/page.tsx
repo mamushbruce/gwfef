@@ -44,15 +44,13 @@ export default function SponsorshipPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="relative flex h-full flex-col justify-end p-6 text-white">
-                  <h3 className="font-headline text-3xl font-bold">{child.name}</h3>
-                  <p className="text-sm">{child.age} years old | {child.location}</p>
                   <Button 
-                    className="mt-4 w-full" 
+                    className="w-full" 
                     variant={child.sponsorshipStatus === 'Sponsored' ? 'secondary' : 'default'} 
                     disabled={child.sponsorshipStatus === 'Sponsored'}
                     asChild
                   >
-                    <span>{child.sponsorshipStatus === 'Available' ? `Sponsor ${child.name}` : 'Sponsored'}</span>
+                    <span>{child.sponsorshipStatus === 'Available' ? 'Sponsor' : 'Sponsored'}</span>
                   </Button>
                 </div>
                 {child.sponsorshipStatus === 'Sponsored' && (
