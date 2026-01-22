@@ -79,3 +79,43 @@ export const children: Child[] = [
     sponsorshipStatus: 'Sponsored',
   },
 ];
+
+export type Story = {
+  id: number;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  imageId: string;
+  date: string;
+};
+
+export const stories: Story[] = [
+  {
+    id: 1,
+    slug: 'annual-community-gala-raises-record-donations',
+    title: 'Annual Community Gala Raises Record Donations',
+    excerpt: 'Our annual gala was a huge success, bringing together supporters and raising funds for upcoming projects.',
+    content: '<p>Our annual gala was a huge success, bringing together supporters and raising funds for upcoming projects that will further our mission of empowering children. The event, held at the Grand Ballroom, featured inspiring speeches, a silent auction, and performances from some of the children in our programs. We are incredibly grateful for the generosity of our community.</p><p>The funds raised will go towards building a new wing for our school, providing scholarships for promising students, and expanding our healthcare services. Thanks to our donors, we can continue to make a meaningful impact on the lives of countless children and their families.</p>',
+    imageId: 'news-1',
+    date: 'October 20, 2023',
+  },
+  {
+    id: 2,
+    slug: 'new-literacy-program-launched-in-5-villages',
+    title: 'New Literacy Program Launched in 5 Villages',
+    excerpt: 'We\'re excited to launch a new program focused on improving reading and writing skills for over 200 children.',
+    content: '<p>We are thrilled to announce the launch of our new literacy program, which will serve over 200 children across five villages. This initiative aims to provide essential reading and writing skills, opening up new worlds of opportunity for these young learners.</p><p>The program includes mobile libraries, trained tutors, and interactive workshops to make learning fun and engaging. We believe that literacy is the foundation for a brighter future, and we are committed to giving every child the tools they need to succeed.</p>',
+    imageId: 'news-2',
+    date: 'September 15, 2023',
+  },
+  {
+    id: 3,
+    slug: 'volunteers-complete-construction-of-a-new-library',
+    title: 'Volunteers Complete Construction of a New Library',
+    excerpt: 'A dedicated team of volunteers has completed a new library, providing access to thousands of books.',
+    content: '<p>Thanks to the hard work and dedication of our amazing volunteers, a new community library has been constructed. This beautiful new space will provide access to thousands of books for children and adults alike, fostering a love for reading and learning in the community.</p><p>The library will also host story time sessions for young children, study groups for students, and workshops for adults. It is more than just a building; it is a hub for knowledge, creativity, and community connection.</p>',
+    imageId: 'news-3',
+    date: 'August 1, 2023',
+  },
+];
