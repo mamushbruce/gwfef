@@ -1,0 +1,169 @@
+/**
+ * @file firestore.rules
+ * @description Security rules for the Gods Will for Eternity Foundation Firestore database.
+ *
+ * @section Core Philosophy
+ * This ruleset enforces a hybrid security model that combines strict user-ownership with a global administrative role.
+ * - User-Specific Data: All data directly owned by a user (like their profile, donations, and sponsorships) is stored in subcollections under their user ID. Access is strictly limited to the data owner.
+ * - Public Data: Globally relevant information, such as public content and impact stories, is stored in top-level collections and is publicly readable.
+ * - Administrative Access: A special `roles_admin` collection grants administrative privileges. Admins have specific management capabilities over certain collections, such as creating content and managing sponsorships.
+ *
+ * @section Data Structure
+ * - `/users/{userId}`: A user-centric structure. Each user's document contains their profile, and subcollections like `/donations` and `/sponsored_children` hold their private, related data.
+ * - `/content`, `/impact`: Top-level collections for public-facing data.
+ * - `/roles_admin`: A dedicated collection for Database-as-Access-Control (DBAC). The existence of a user's UID as a document ID in this collection grants them admin rights.
+ *
+ * @section Key Security Decisions
+ * - User Data Privacy: Listing of top-level user profiles is disabled to protect user privacy. A user can only access their own data tree.
+ * - Admin Role Management: The `/roles_admin` collection is completely locked down from client-side SDKs. Admin roles must be granted out-of-band (e.g., via the Firebase Console or a trusted server environment) to prevent privilege escalation.
+ * - Denormalization for Authorization: The rules rely on data being structured for efficient security. For example, admin status is checked with a single `exists()` call, avoiding slow and costly lookups across other collections.
+ * - Structural Segregation: User-private data (e.g., donations) is in a separate collection path from public data (e.g., content), allowing for simple, high-performance security rules for each.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // -------------------------------------------------------------------------
+    // Helper Functions
+    // -------------------------------------------------------------------------
+
+    /**
+     * The user must be signed into the application.
+     */
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    /**
+     * The requesting user's UID must match the provided userId.
+     * Used to verify ownership of a document or data path.
+     */
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    /**
+     * Checks if the current user has administrative privileges.
+     * Admin status is granted if a document with the user's UID exists in the /roles_admin collection.
+     */
+    function isAdmin() {
+      return isSignedIn() && exists(/databases/$(database)/documents/roles_admin/$(request.auth.uid));
+    }
+
+    /**
+     * Verifies that the document being modified already exists.
+     * This is a critical check for all update and delete operations.
+     */
+    function isExistingDoc() {
+      return resource != null;
+    }
+
+    // -------------------------------------------------------------------------
+    // User Collections
+    // -------------------------------------------------------------------------
+
+    /**
+     * @description Manages user profile documents.
+     * @path /users/{userId}
+     * @allow (create) An authenticated user creates their own profile document, e.g., POST /users/abc-123 with auth.uid = 'abc-123'.
+     * @deny (list) A user attempts to list all documents in the /users collection.
+     * @deny (update) A user tries to change their role from 'sponsor' to 'admin'.
+     * @principle Restricts access to a user's own data tree and enforces self-creation. Prevents privilege escalation by making the `role` field immutable.
+     */
+    match /users/{userId} {
+      allow get: if isOwner(userId) || isAdmin();
+      allow list: if false;
+      allow create: if isOwner(userId) && request.resource.data.id == userId;
+      allow update: if isOwner(userId) && isExistingDoc() && request.resource.data.id == resource.data.id && request.resource.data.role == resource.data.role;
+      allow delete: if false;
+    }
+
+    /**
+     * @description Manages a user's donation history.
+     * @path /users/{userId}/donations/{donationId}
+     * @allow (create) A user creates a new donation record for themselves.
+     * @allow (list) A user lists their own past donations.
+     * @deny (get) A user attempts to read another user's donation record.
+     * @principle Enforces strict data ownership. A user has full control over their own donation records, but no visibility into others'.
+     */
+    match /users/{userId}/donations/{donationId} {
+      allow get: if isOwner(userId) || isAdmin();
+      allow list: if isOwner(userId) || isAdmin();
+      allow create: if isOwner(userId) && request.resource.data.donorId == userId;
+      allow update: if isOwner(userId) && isExistingDoc() && request.resource.data.donorId == resource.data.donorId;
+      allow delete: if isOwner(userId) && isExistingDoc();
+    }
+
+    /**
+     * @description Manages records of children sponsored by a user.
+     * @path /users/{userId}/sponsored_children/{childId}
+     * @allow (list) A sponsoring user lists the children they sponsor.
+     * @allow (create) An admin creates a sponsorship record and assigns it to a user.
+     * @deny (create) A regular user attempts to create a sponsorship record for themselves.
+     * @deny (update) A regular user attempts to modify sponsorship details.
+     * @principle Restricts read access to the sponsor and admins, while write operations are exclusively for admins to manage sponsorships centrally.
+     */
+    match /users/{userId}/sponsored_children/{childId} {
+      allow get: if isOwner(userId) || isAdmin();
+      allow list: if isOwner(userId) || isAdmin();
+      allow create: if isAdmin() && request.resource.data.sponsorId == userId;
+      allow update: if isAdmin() && isExistingDoc() && request.resource.data.sponsorId == resource.data.sponsorId;
+      allow delete: if isAdmin() && isExistingDoc();
+    }
+
+    // -------------------------------------------------------------------------
+    // Global Collections
+    // -------------------------------------------------------------------------
+
+    /**
+     * @description Manages public content like articles, stories, and program descriptions.
+     * @path /content/{contentId}
+     * @allow (get) Any user, including unauthenticated visitors, reads a published article.
+     * @allow (create) An admin creates a new piece of content.
+     * @deny (create) A regular user attempts to publish a new article.
+     * @principle Implements a "Public Read, Admin Write" model. Information is accessible to everyone, but can only be managed by trusted administrators.
+     */
+    match /content/{contentId} {
+      allow get: if true;
+      allow list: if true;
+      allow create: if isAdmin() && request.resource.data.authorId == request.auth.uid;
+      allow update: if isAdmin() && isExistingDoc() && request.resource.data.authorId == resource.data.authorId;
+      allow delete: if isAdmin() && isExistingDoc();
+    }
+
+    /**
+     * @description Manages public records showcasing the organization's impact.
+     * @path /impact/{impactId}
+     * @allow (list) Any user, including unauthenticated visitors, lists all impact stories.
+     * @allow (update) An admin updates the metrics on an existing impact record.
+     * @deny (delete) A regular user attempts to delete an impact record.
+     * @principle Implements a "Public Read, Admin Write" model. Impact stories are visible to all, but creation and modification are restricted to admins.
+     */
+    match /impact/{impactId} {
+      allow get: if true;
+      allow list: if true;
+      allow create: if isAdmin();
+      allow update: if isAdmin() && isExistingDoc();
+      allow delete: if isAdmin() && isExistingDoc();
+    }
+
+    // -------------------------------------------------------------------------
+    // Administrative Collections
+    // -------------------------------------------------------------------------
+
+    /**
+     * @description A private collection for granting admin roles. The existence of a document with a user's UID grants admin privileges.
+     * @path /roles_admin/{userId}
+     * @allow (get) No client-side operations are permitted.
+     * @deny (create) Any user attempts to add a document to this collection from the client app.
+     * @principle Enforces a "locked-down" collection for Database-as-Access-Control (DBAC). Admin roles must only be managed through a trusted environment like the Firebase Console.
+     */
+    match /roles_admin/{userId} {
+      allow get: if false;
+      allow list: if false;
+      allow create: if false;
+      allow update: if false;
+      allow delete: if false;
+    }
+  }
+}

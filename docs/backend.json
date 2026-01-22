@@ -1,0 +1,343 @@
+{
+  "entities": {
+    "Donation": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Donation",
+      "type": "object",
+      "description": "Represents a monetary donation made to the organization.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the donation.",
+          "format": "uuid"
+        },
+        "donorId": {
+          "type": "string",
+          "description": "Reference to the User who made the donation. (Relationship: User 1:N Donation)"
+        },
+        "amount": {
+          "type": "number",
+          "description": "The amount of the donation in USD.",
+          "format": "float"
+        },
+        "donationDate": {
+          "type": "string",
+          "description": "The date and time the donation was made.",
+          "format": "date-time"
+        },
+        "paymentMethod": {
+          "type": "string",
+          "description": "The method of payment used for the donation (e.g., Stripe, PayPal)."
+        },
+        "isRecurring": {
+          "type": "boolean",
+          "description": "Indicates whether the donation is a recurring donation."
+        }
+      },
+      "required": [
+        "id",
+        "donorId",
+        "amount",
+        "donationDate",
+        "paymentMethod",
+        "isRecurring"
+      ]
+    },
+    "Child": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Child",
+      "type": "object",
+      "description": "Represents a child profile managed by the organization.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the child.",
+          "format": "uuid"
+        },
+        "name": {
+          "type": "string",
+          "description": "The child's name."
+        },
+        "dateOfBirth": {
+          "type": "string",
+          "description": "The child's date of birth.",
+          "format": "date"
+        },
+        "gender": {
+          "type": "string",
+          "description": "The child's gender."
+        },
+        "country": {
+          "type": "string",
+          "description": "The child's country of origin."
+        },
+        "bio": {
+          "type": "string",
+          "description": "A brief biography of the child."
+        },
+        "needs": {
+          "type": "string",
+          "description": "Description of the child's needs."
+        },
+        "sponsorId": {
+          "type": "string",
+          "description": "Reference to the User sponsoring the child. (Relationship: User 1:N Child)"
+        },
+        "profileImageUrl": {
+          "type": "string",
+          "description": "URL to the child's profile image.",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "dateOfBirth",
+        "gender",
+        "country",
+        "bio",
+        "needs"
+      ]
+    },
+    "Content": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Content",
+      "type": "object",
+      "description": "Represents content managed by the CMS.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the content.",
+          "format": "uuid"
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the content."
+        },
+        "body": {
+          "type": "string",
+          "description": "The body of the content (e.g., HTML or Markdown)."
+        },
+        "contentType": {
+          "type": "string",
+          "description": "The type of content (e.g., program, story, update)."
+        },
+        "publishDate": {
+          "type": "string",
+          "description": "The date and time the content was published.",
+          "format": "date-time"
+        },
+        "authorId": {
+          "type": "string",
+          "description": "Reference to the User who authored the content. (Relationship: User 1:N Content)"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "body",
+        "contentType",
+        "publishDate",
+        "authorId"
+      ]
+    },
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user of the system.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the user.",
+          "format": "uuid"
+        },
+        "email": {
+          "type": "string",
+          "description": "The user's email address.",
+          "format": "email"
+        },
+        "firstName": {
+          "type": "string",
+          "description": "The user's first name."
+        },
+        "lastName": {
+          "type": "string",
+          "description": "The user's last name."
+        },
+        "role": {
+          "type": "string",
+          "description": "The user's role (e.g., admin, sponsor)."
+        }
+      },
+      "required": [
+        "id",
+        "email",
+        "firstName",
+        "lastName",
+        "role"
+      ]
+    },
+    "Impact": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Impact",
+      "type": "object",
+      "description": "Represents the positive impact created by the organization.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the impact record.",
+          "format": "uuid"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title describing the impact (e.g., 'Education Program Success')."
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of the impact achieved."
+        },
+        "metrics": {
+          "type": "string",
+          "description": "Key metrics that quantify the impact (e.g., 'Number of children educated')."
+        },
+        "dateAchieved": {
+          "type": "string",
+          "description": "Date when the impact was achieved.",
+          "format": "date"
+        },
+        "contentId": {
+          "type": "string",
+          "description": "Reference to related content like a story or program. (Relationship: Content 1:N Impact)"
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL of an image showcasing the impact.",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "metrics",
+        "dateAchieved"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user profiles.  Owned by the user. Includes standard profile information (email, name, role).",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/donations/{donationId}",
+        "definition": {
+          "entityName": "Donation",
+          "schema": {
+            "$ref": "#/backend/entities/Donation"
+          },
+          "description": "Stores donations made by a specific user. This enables easy retrieval of donation history for each user.  Owned by the user.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user making the donation."
+            },
+            {
+              "name": "donationId",
+              "description": "The unique identifier for the donation."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/sponsored_children/{childId}",
+        "definition": {
+          "entityName": "Child",
+          "schema": {
+            "$ref": "#/backend/entities/Child"
+          },
+          "description": "Stores child profiles sponsored by a specific user. This allows sponsors to easily view and manage the children they are sponsoring. Includes denormalized 'sponsorId' for authorization independence.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user sponsoring the child (sponsorId)."
+            },
+            {
+              "name": "childId",
+              "description": "The unique identifier for the child being sponsored."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/content/{contentId}",
+        "definition": {
+          "entityName": "Content",
+          "schema": {
+            "$ref": "#/backend/entities/Content"
+          },
+          "description": "Stores content managed by the CMS. This includes articles, stories, and program descriptions.  Content is globally accessible, but create/update operations may be restricted to admins.",
+          "params": [
+            {
+              "name": "contentId",
+              "description": "The unique identifier for the content."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/impact/{impactId}",
+        "definition": {
+          "entityName": "Impact",
+          "schema": {
+            "$ref": "#/backend/entities/Impact"
+          },
+          "description": "Stores impact records, representing the positive outcomes achieved by the organization.  Impact records are globally accessible, but create/update operations may be restricted to admins.",
+          "params": [
+            {
+              "name": "impactId",
+              "description": "The unique identifier for the impact record."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/roles_admin/{userId}",
+        "definition": {
+          "entityName": "roles_admin",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Collection to store admin user IDs. Presence of a document indicates admin privileges.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the admin user."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to securely manage data for the Gods Will for eternity Foundation, focusing on donations, child sponsorships, content management, and user roles. It prioritizes authorization independence, clarity, and scalability.\n\n**Authorization Independence (Denormalization):**\n*   The structure avoids hierarchical authorization dependencies (`get()`) by denormalizing authorization data. For example, if access to a Child document depends on the sponsoring User's attributes, those attributes should be copied into the Child document. This ensures atomic operations and easier debugging.\n\n**Structural Segregation (Homogeneous Security Posture):**\n*   Data with different access requirements are stored in separate collections to simplify security rules. For example, `/users/{userId}/donations/{donationId}` is used for user-specific donation data, while `/content/{contentId}` is used for globally accessible content, each having distinct security rules.\n\n**Access Modeling (Standardization and Consistency):**\n*   **User Data:** User-specific data (donations, sponsored children) are stored under `/users/{userId}`.\n*   **Collaborative Data:**  While the current entities don't explicitly define collaborative data, the membership map pattern (`members: {uid1: \"role\", uid2: \"role\"}`) can be used in the future. For example, if managing teams, a `/teams/{teamId}` collection could include a `members` map to define team member roles.\n*   **Global Roles (DBAC):** The `/roles_admin/{uid}` collection is used to grant admin privileges based on document existence, enabling secure admin dashboard access.\n\n**QAPs (Rules Are Not Filters):**\n*   Secure `list` operations are supported through structural segregation and path-based ownership. For example, listing children sponsored by a specific user is done via `/users/{userId}/sponsored_children/{childId}`, making it easy to enforce security rules that only allow the user to list their own sponsored children.\n\n**Justification:**\nThe data structure employs a path-based approach for user-owned data (donations, sponsored children), ensuring that users can only access their respective data. Content and Impact data are stored at the root level, assuming a global access model with potential role-based restrictions (e.g., only admins can create/update content). The `/roles_admin/{uid}` collection enables simple admin role checks using `exists()` in security rules.\n\n**DBAC**: Roles are managed within the database via the `/roles_admin/{uid}` collection. This is preferred over custom claims for easier role management and auditability.\n\nThis design ensures a secure, scalable, and debuggable Firestore structure that supports the application's core features while adhering to best practices for security and data integrity."
+  }
+}
