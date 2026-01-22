@@ -34,39 +34,32 @@ export default function SponsorshipPage() {
         <div className="container mx-auto px-4">
           <h2 className="mb-12 text-center font-headline text-3xl font-bold text-primary md:text-4xl">Children Awaiting Sponsorship</h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {children.map((child) => {
-              const childImage = PlaceHolderImages.find(p => p.id === child.imageId);
-              return (
-                <Card key={child.id} className="group flex transform flex-col overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-xl">
-                  <Link href={`/sponsorship/${child.id}`} className="flex flex-col h-full">
-                    <CardHeader className="relative h-64 w-full p-0">
-                      {childImage && (
-                        <Image
-                          src={childImage.imageUrl}
-                          alt={child.name}
-                          data-ai-hint={childImage.imageHint}
-                          fill
-                          className="object-cover object-top"
-                        />
-                      )}
-                      {child.sponsorshipStatus === 'Sponsored' && (
-                        <Badge variant="default" className="absolute right-3 top-3 bg-primary/80 backdrop-blur-sm">Sponsored</Badge>
-                      )}
-                    </CardHeader>
-                    <CardContent className="flex-grow p-6">
-                      <h3 className="font-headline text-2xl font-bold">{child.name}</h3>
-                      <p className="text-sm text-muted-foreground">{child.age} years old | {child.location}</p>
-                      <p className="mt-2 text-sm">Loves to {child.bio.toLowerCase().includes('read') ? 'read' : child.bio.toLowerCase().includes('soccer') ? 'play soccer' : 'draw'}.</p>
-                    </CardContent>
-                    <CardFooter className="p-6 pt-0">
-                      <Button className="w-full" disabled={child.sponsorshipStatus === 'Sponsored'}>
-                        {child.sponsorshipStatus === 'Available' ? `Sponsor ${child.name}` : 'Sponsored'}
-                      </Button>
-                    </CardFooter>
-                  </Link>
-                </Card>
-              );
-            })}
+            {children.map((child) => (
+              <Link href={`/sponsorship/${child.id}`} key={child.id} className="group relative block h-96 w-full overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <Image
+                  src={child.imageUrl}
+                  alt={child.name}
+                  fill
+                  className="object-cover object-center transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="relative flex h-full flex-col justify-end p-6 text-white">
+                  <h3 className="font-headline text-3xl font-bold">{child.name}</h3>
+                  <p className="text-sm">{child.age} years old | {child.location}</p>
+                  <Button 
+                    className="mt-4 w-full" 
+                    variant={child.sponsorshipStatus === 'Sponsored' ? 'secondary' : 'default'} 
+                    disabled={child.sponsorshipStatus === 'Sponsored'}
+                    asChild
+                  >
+                    <span>{child.sponsorshipStatus === 'Available' ? `Sponsor ${child.name}` : 'Sponsored'}</span>
+                  </Button>
+                </div>
+                {child.sponsorshipStatus === 'Sponsored' && (
+                  <Badge variant="default" className="absolute right-3 top-3 bg-primary/80 backdrop-blur-sm">Sponsored</Badge>
+                )}
+              </Link>
+            ))}
           </div>
         </div>
       </section>

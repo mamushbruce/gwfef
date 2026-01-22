@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { children } from "@/lib/data";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -15,8 +14,6 @@ export default function ChildDetailPage({ params }: { params: { id: string } }) 
     notFound();
   }
 
-  const childImage = PlaceHolderImages.find(p => p.id === child.imageId);
-
   return (
     <div className="bg-primary/5">
       <div className="container mx-auto px-4 py-16 md:py-24">
@@ -25,16 +22,13 @@ export default function ChildDetailPage({ params }: { params: { id: string } }) 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
               <div className="md:col-span-2">
                 <Card className="overflow-hidden shadow-lg">
-                  {childImage && (
-                    <Image
-                      src={childImage.imageUrl}
-                      alt={child.name}
-                      data-ai-hint={childImage.imageHint}
-                      width={600}
-                      height={800}
-                      className="aspect-[3/4] w-full object-cover"
-                    />
-                  )}
+                  <Image
+                    src={child.imageUrl}
+                    alt={child.name}
+                    width={600}
+                    height={800}
+                    className="aspect-[3/4] w-full object-cover"
+                  />
                 </Card>
               </div>
               <div className="md:col-span-3">

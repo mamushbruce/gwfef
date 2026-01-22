@@ -5,10 +5,10 @@ import { ArrowRight, BookOpen, HeartHandshake, Users, Briefcase, GraduationCap, 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { children } from "@/lib/data";
 
 export default function Home() {
-  const featuredChildImage = PlaceHolderImages.find(p => p.id === 'child-portrait-1');
+  const featuredChild = children.find(c => c.id === 1);
   const missionImage = PlaceHolderImages.find(p => p.id === 'group-happy-children');
   const impactImage = PlaceHolderImages.find(p => p.id === 'story-community-build');
   const whatWeDoImage1 = PlaceHolderImages.find(p => p.id === 'sponsorship-hero');
@@ -99,11 +99,10 @@ export default function Home() {
             </Card>
 
             <Card className="group relative col-span-1 row-span-1 flex flex-col overflow-hidden transition-transform duration-300 ease-in-out hover:scale-[1.02] hover:shadow-xl lg:row-span-2">
-               {featuredChildImage && (
+               {featuredChild && (
                 <Image
-                  src={featuredChildImage.imageUrl}
-                  alt={featuredChildImage.description}
-                  data-ai-hint={featuredChildImage.imageHint}
+                  src={featuredChild.imageUrl}
+                  alt={featuredChild.name}
                   fill
                   className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                 />
@@ -111,11 +110,15 @@ export default function Home() {
                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                <div className="relative z-10 mt-auto flex flex-col p-6 text-white">
                  <CardDescription className="text-white/80">Sponsor a Child</CardDescription>
-                 <CardTitle className="font-headline text-3xl">Meet LINA</CardTitle>
-                 <p className="mt-2 text-white/90">Lina dreams of becoming a teacher. Your sponsorship can make her dream a reality.</p>
-                 <Button asChild className="mt-4 w-fit bg-accent text-accent-foreground hover:bg-accent/90">
-                    <Link href="/sponsorship/1">Sponsor Lina</Link>
-                  </Button>
+                 {featuredChild && (
+                   <>
+                    <CardTitle className="font-headline text-3xl">Meet {featuredChild.name.toUpperCase()}</CardTitle>
+                    <p className="mt-2 text-white/90">{featuredChild.name} dreams of becoming a {featuredChild.dream}. Your sponsorship can make {featuredChild.gender === 'Female' ? 'her' : 'his'} dream a reality.</p>
+                    <Button asChild className="mt-4 w-fit bg-accent text-accent-foreground hover:bg-accent/90">
+                        <Link href={`/sponsorship/${featuredChild.id}`}>Sponsor {featuredChild.name}</Link>
+                    </Button>
+                   </>
+                 )}
                </div>
             </Card>
 
@@ -157,6 +160,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-primary py-16 text-primary-foreground md:py-24">
+        <div className="container mx-auto grid grid-cols-1 gap-y-12 px-4 md:grid-cols-3 md:gap-x-12">
+          <div className="text-center">
+            <h3 className="font-headline text-5xl font-bold">200+</h3>
+            <p className="mt-2 text-lg font-semibold uppercase tracking-wider">Children Empowered</p>
+            <p className="mt-2 text-primary-foreground/80">through our educational and support programs.</p>
+          </div>
+          <div className="text-center">
+            <h3 className="font-headline text-5xl font-bold">15+</h3>
+            <p className="mt-2 text-lg font-semibold uppercase tracking-wider">Communities Served</p>
+            <p className="mt-2 text-primary-foreground/80">providing resources and building local capacity.</p>
+          </div>
+          <div className="text-center">
+            <h3 className="font-headline text-5xl font-bold">100%</h3>
+            <p className="mt-2 text-lg font-semibold uppercase tracking-wider">Commitment</p>
+            <p className="mt-2 text-primary-foreground/80">of your donation goes directly to our programs.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center">
@@ -168,7 +191,7 @@ export default function Home() {
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             <Card className="group relative flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
-              {whatWeDoImage1 && <Image src={whatWeDoImage1.imageUrl} alt={whatWeDoImage1.description} width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
+              {whatWeDoImage1 && <Image src={whatWeDoImage1.imageUrl} alt={whatWeDoImage1.description} data-ai-hint={whatWeDoImage1.imageHint} width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
               <CardHeader>
                 <CardTitle className="font-headline">Child Sponsorship</CardTitle>
               </CardHeader>
@@ -182,7 +205,7 @@ export default function Home() {
               </CardFooter>
             </Card>
             <Card className="group relative flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
-              {whatWeDoImage2 && <Image src={whatWeDoImage2.imageUrl} alt={whatWeDoImage2.description} width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
+              {whatWeDoImage2 && <Image src={whatWeDoImage2.imageUrl} alt={whatWeDoImage2.description} data-ai-hint={whatWeDoImage2.imageHint} width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
               <CardHeader>
                 <CardTitle className="font-headline">Community Empowerment</CardTitle>
               </CardHeader>
@@ -196,7 +219,7 @@ export default function Home() {
               </CardFooter>
             </Card>
             <Card className="group relative flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
-              {whatWeDoImage3 && <Image src={whatWeDoImage3.imageUrl} alt={whatWeDoImage3.description} width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
+              {whatWeDoImage3 && <Image src={whatWeDoImage3.imageUrl} alt={whatWeDoImage3.description} data-ai-hint={whatWeDoImage3.imageHint} width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
               <CardHeader>
                 <CardTitle className="font-headline">Advocacy & Awareness</CardTitle>
               </CardHeader>

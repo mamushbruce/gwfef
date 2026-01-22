@@ -6,7 +6,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { children } from "@/lib/data";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function AdminChildrenPage() {
   return (
@@ -39,19 +38,16 @@ export default function AdminChildrenPage() {
             </TableHeader>
             <TableBody>
               {children.map((child) => {
-                const childImage = PlaceHolderImages.find(p => p.id === child.imageId);
                 return (
                   <TableRow key={child.id}>
                     <TableCell className="hidden sm:table-cell">
-                      {childImage && (
-                        <Image
-                          alt={child.name}
-                          className="aspect-square rounded-md object-cover"
-                          height="64"
-                          src={childImage.imageUrl}
-                          width="64"
-                        />
-                      )}
+                      <Image
+                        alt={child.name}
+                        className="aspect-square rounded-md object-cover"
+                        height="64"
+                        src={child.imageUrl}
+                        width="64"
+                      />
                     </TableCell>
                     <TableCell className="font-medium">{child.name}</TableCell>
                     <TableCell>
