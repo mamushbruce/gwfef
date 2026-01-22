@@ -10,6 +10,7 @@
  *
  * @section Data Structure
  * - `/users/{userId}`: A user-centric structure. Each user's document contains their profile, and subcollections like `/donations` and `/sponsored_children` hold their private, related data.
+ * - `/children`: A global collection of all child profiles, readable by the public but managed by admins.
  * - `/content`, `/impact`: Top-level collections for public-facing data.
  * - `/roles_admin`: A dedicated collection for Database-as-Access-Control (DBAC). The existence of a user's UID as a document ID in this collection grants them admin rights.
  *
@@ -114,6 +115,22 @@ service cloud.firestore {
     // -------------------------------------------------------------------------
     // Global Collections
     // -------------------------------------------------------------------------
+
+    /**
+     * @description Manages all child profiles. Publicly readable for sponsorship opportunities, but writable only by admins.
+     * @path /children/{childId}
+     * @allow (list) Any user can list all children available for sponsorship.
+     * @allow (create) An admin adds a new child profile.
+     * @deny (delete) A regular user attempts to remove a child profile.
+     * @principle Enables public browsing of sponsorship opportunities while maintaining administrative control over the data.
+     */
+    match /children/{childId} {
+      allow get: if true;
+      allow list: if true;
+      allow create: if isAdmin();
+      allow update: if isAdmin() && isExistingDoc();
+      allow delete: if isAdmin() && isExistingDoc();
+    }
 
     /**
      * @description Manages public content like articles, stories, and program descriptions.
