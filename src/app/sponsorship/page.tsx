@@ -1,11 +1,16 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
 import { children } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { notFound } from "next/navigation";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function SponsorshipPage() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'sponsorship-hero');
@@ -35,28 +40,40 @@ export default function SponsorshipPage() {
           <h2 className="mb-12 text-center font-headline text-3xl font-bold text-primary md:text-4xl">Children Awaiting Sponsorship</h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {children.map((child) => (
-              <Link href={`/sponsorship/${child.id}`} key={child.id} className="group relative block h-96 w-full overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                <Image
-                  src={child.imageUrl}
-                  alt={child.name}
-                  fill
-                  className="object-cover object-center transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="relative flex h-full flex-col justify-end p-6 text-white">
-                  <Button 
-                    className="w-full" 
-                    variant={child.sponsorshipStatus === 'Sponsored' ? 'secondary' : 'default'} 
-                    disabled={child.sponsorshipStatus === 'Sponsored'}
-                    asChild
-                  >
-                    <span>{child.sponsorshipStatus === 'Available' ? 'Sponsor' : 'Sponsored'}</span>
-                  </Button>
-                </div>
-                {child.sponsorshipStatus === 'Sponsored' && (
-                  <Badge variant="default" className="absolute right-3 top-3 bg-primary/80 backdrop-blur-sm">Sponsored</Badge>
-                )}
-              </Link>
+              <Dialog key={child.id}>
+                <DialogTrigger asChild>
+                  <div className="group relative block h-96 w-full cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                    <Image
+                      src={child.imageUrl}
+                      alt={child.name}
+                      fill
+                      className="object-cover object-center transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="relative flex h-full flex-col justify-end p-6 text-white">
+                      <Button
+                        className="w-full"
+                        variant={child.sponsorshipStatus === 'Sponsored' ? 'secondary' : 'default'}
+                        disabled={child.sponsorshipStatus === 'Sponsored'}
+                      >
+                        <span>{child.sponsorshipStatus === 'Available' ? 'Sponsor' : 'Sponsored'}</span>
+                      </Button>
+                    </div>
+                    {child.sponsorshipStatus === 'Sponsored' && (
+                      <Badge variant="default" className="absolute right-3 top-3 bg-primary/80 backdrop-blur-sm">Sponsored</Badge>
+                    )}
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="p-0 border-0 max-w-3xl bg-transparent shadow-none">
+                  <Image
+                    src={child.imageUrl}
+                    alt={child.name}
+                    width={800}
+                    height={1200}
+                    className="w-full h-auto rounded-lg"
+                  />
+                </DialogContent>
+              </Dialog>
             ))}
           </div>
         </div>
