@@ -52,7 +52,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center px-4">
         <Link href="/" className="mr-6 flex items-center gap-2">
           <HandHeart className="h-6 w-6 text-primary" />
-          <span className="font-headline text-lg font-bold">Gods Will Foundation</span>
+          <span className="font-headline text-lg font-bold">Gods Will for Eternity Foundation</span>
         </Link>
         
         <nav className="hidden items-center gap-6 md:flex">
@@ -106,7 +106,7 @@ export function Header() {
             <SheetContent side="left">
                <Link href="/" className="mr-6 flex items-center gap-2 mb-8" onClick={() => setIsMobileMenuOpen(false)}>
                 <HandHeart className="h-6 w-6 text-primary" />
-                <span className="font-headline text-lg font-bold">Gods Will Foundation</span>
+                <span className="font-headline text-lg font-bold">Gods Will for Eternity Foundation</span>
               </Link>
               <div className="flex flex-col gap-6">
                 <NavItems/>

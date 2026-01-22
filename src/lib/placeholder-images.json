@@ -77,6 +77,42 @@
       "description": "A sponsor and child writing letters to each other.",
       "imageUrl": "https://images.unsplash.com/photo-1560785496-3c9d27877182?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaGlsZCUyMHdyaXRpbmd8ZW58MHx8fHwxNzY5MDM1NjEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "child writing"
+    },
+    {
+      "id": "learning-fun",
+      "description": "Children learning in a fun and interactive way.",
+      "imageUrl": "https://images.unsplash.com/photo-1541692641319-981cc79ee10a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjaGlsZHJlbiUyMGxlYXJuaW5nfGVufDB8fHx8MTc2OTA0MTA3OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "children learning"
+    },
+    {
+      "id": "foundation-difference",
+      "description": "A group of children in the community.",
+      "imageUrl": "https://images.unsplash.com/photo-1761048370427-494e01030f97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjaGlsZHJlbiUyMGNvbW11bml0eXxlbnwwfHx8fDE3NjkwNzE5MTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "children community"
+    },
+    {
+      "id": "resources-orgs",
+      "description": "People collaborating in a community meeting.",
+      "imageUrl": "https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21tdW5pdHklMjBtZWV0aW5nfGVufDB8fHx8MTc2OTA2OTk0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "community meeting"
+    },
+    {
+      "id": "news-1",
+      "description": "A community event.",
+      "imageUrl": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb21tdW5pdHklMjBldmVudHxlbnwwfHx8fDE3NjkwMTM2NDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "community event"
+    },
+    {
+      "id": "news-2",
+      "description": "Children studying together.",
+      "imageUrl": "https://images.unsplash.com/photo-1606546417087-822836c1d0b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaGlsZHJlbiUyMHN0dWR5aW5nfGVufDB8fHx8MTc2OTA3MTkxMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "children studying"
+    },
+    {
+      "id": "news-3",
+      "description": "A newly built school building.",
+      "imageUrl": "https://images.unsplash.com/photo-1728206348193-9b5ae74a7d32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzY2hvb2wlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjkwMTE0NjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "school building"
     }
   ]
 }

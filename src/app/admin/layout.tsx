@@ -17,6 +17,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { HandHeart, LayoutDashboard, Users, BookOpen, HeartHandshake, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const adminNavLinks = [
     { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -36,7 +37,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <div className="flex items-center gap-2">
                  <Link href="/" className="flex items-center gap-2">
                     <HandHeart className="h-6 w-6 text-primary" />
-                    <span className="font-headline text-lg font-bold">Gods Will</span>
+                    <span className="font-headline text-lg font-bold">Gods Will for Eternity</span>
                 </Link>
                 <SidebarTrigger className="ml-auto" />
               </div>
