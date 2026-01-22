@@ -28,7 +28,8 @@ export function Footer() {
             <h3 className="font-headline font-semibold tracking-wider text-background">Contact Us</h3>
             <ul className="mt-4 space-y-3">
               <li>info@godswillfoundation.org</li>
-              <li>123 Charity Lane, Hope City, 12345</li>
+              <li>+256 787 610 197</li>
+              <li>Budondo, Northern division, Jinja, Uganda</li>
             </ul>
           </div>
           <div>

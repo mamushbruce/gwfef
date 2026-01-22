@@ -1,5 +1,3 @@
-# Firebase Studio
+# God's will for eternity foundation
 
-This is a NextJS starter in Firebase Studio.
-
-To get started, take a look at src/app/page.tsx.
+God's Will Foundation, since 2022, supports communities through education, healthcare, food aid, clothing and empowerment. We welcome visits and partnerships. You can sponsor an individual or donate, we'd like for you to check our progress anytime please.
