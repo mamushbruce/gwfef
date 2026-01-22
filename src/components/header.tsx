@@ -37,7 +37,7 @@ export function Header() {
           key={link.href}
           href={link.href}
           className={cn(
-            "text-sm font-medium transition-colors hover:text-primary",
+            "text-sm font-medium transition-all hover:text-primary transform hover:scale-105",
             pathname === link.href ? "text-primary" : "text-muted-foreground"
           )}
           onClick={() => setIsMobileMenuOpen(false)}

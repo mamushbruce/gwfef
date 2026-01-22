@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen, HeartHandshake, Users } from "lucide-react";
+import { ArrowRight, BookOpen, HeartHandshake, Users, Briefcase, GraduationCap, Heart, HandHelping } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -11,6 +11,9 @@ export default function Home() {
   const featuredChildImage = PlaceHolderImages.find(p => p.id === 'child-portrait-1');
   const missionImage = PlaceHolderImages.find(p => p.id === 'group-happy-children');
   const impactImage = PlaceHolderImages.find(p => p.id === 'story-community-build');
+  const whatWeDoImage1 = PlaceHolderImages.find(p => p.id === 'sponsorship-hero');
+  const whatWeDoImage2 = PlaceHolderImages.find(p => p.id === 'impact-hero');
+  const whatWeDoImage3 = PlaceHolderImages.find(p => p.id === 'story-graduation-day');
 
   return (
     <div className="flex flex-col">
@@ -51,21 +54,21 @@ export default function Home() {
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">We believe every child deserves a chance to succeed. Discover how we're making a difference through our core programs.</p>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center p-6 rounded-lg transition-all duration-300 hover:bg-primary/5 hover:shadow-lg hover:-translate-y-1">
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <BookOpen className="h-8 w-8" />
               </div>
               <h3 className="mb-2 font-headline text-2xl font-bold">Education</h3>
               <p className="text-muted-foreground">Providing quality education and learning resources to unlock each child's potential.</p>
             </div>
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center p-6 rounded-lg transition-all duration-300 hover:bg-primary/5 hover:shadow-lg hover:-translate-y-1">
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <HeartHandshake className="h-8 w-8" />
               </div>
               <h3 className="mb-2 font-headline text-2xl font-bold">Care & Support</h3>
               <p className="text-muted-foreground">Ensuring children have access to healthcare, nutrition, and a safe, nurturing environment.</p>
             </div>
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center p-6 rounded-lg transition-all duration-300 hover:bg-primary/5 hover:shadow-lg hover:-translate-y-1">
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <Users className="h-8 w-8" />
               </div>
@@ -156,96 +159,97 @@ export default function Home() {
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid items-center gap-12 md:grid-cols-2">
-            <div className="relative h-96 md:h-[400px] rounded-lg overflow-hidden">
-              <Image
-                src={PlaceHolderImages.find(p => p.id === 'learning-fun')?.imageUrl || ''}
-                alt={PlaceHolderImages.find(p => p.id === 'learning-fun')?.description || ''}
-                data-ai-hint={PlaceHolderImages.find(p => p.id === 'learning-fun')?.imageHint || ''}
-                fill
-                className="rounded-lg shadow-xl object-cover"
-              />
-            </div>
-            <div>
-              <p className="font-semibold uppercase tracking-wider text-primary">Our Approach</p>
-              <h2 className="mt-2 font-headline text-3xl font-bold md:text-4xl">Let's make learning fun and affordable!</h2>
-              <p className="mt-4 text-muted-foreground">
-                We believe that education should be engaging and accessible to every child. Our programs are designed to spark curiosity, foster creativity, and provide a supportive environment for students to thrive. We combine traditional teaching methods with innovative activities to make learning an exciting adventure.
-              </p>
-              <Button asChild variant="outline" className="mt-6">
-                <Link href="/about">Learn More</Link>
-              </Button>
-            </div>
+          <div className="text-center">
+            <p className="font-semibold uppercase tracking-wider text-primary">What we do</p>
+            <h2 className="mt-2 font-headline text-3xl font-bold md:text-4xl">We Are Messengers of Hope</h2>
+            <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+              We are dedicated to breaking the cycle of poverty and building a hopeful future for every child. Through our comprehensive programs, we provide not just aid, but empowerment.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+            <Card className="group relative flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
+              {whatWeDoImage1 && <Image src={whatWeDoImage1.imageUrl} alt={whatWeDoImage1.description} width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
+              <CardHeader>
+                <CardTitle className="font-headline">Child Sponsorship</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">Transform a child's life through education, healthcare, and community support.</p>
+              </CardContent>
+              <CardFooter>
+                <Button variant="link" asChild className="p-0 font-semibold">
+                  <Link href="/sponsorship">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                </Button>
+              </CardFooter>
+            </Card>
+            <Card className="group relative flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
+              {whatWeDoImage2 && <Image src={whatWeDoImage2.imageUrl} alt={whatWeDoImage2.description} width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
+              <CardHeader>
+                <CardTitle className="font-headline">Community Empowerment</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">We equip communities with the tools for sustainable growth and self-sufficiency.</p>
+              </CardContent>
+              <CardFooter>
+                <Button variant="link" asChild className="p-0 font-semibold">
+                  <Link href="/impact">See Our Impact <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                </Button>
+              </CardFooter>
+            </Card>
+            <Card className="group relative flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
+              {whatWeDoImage3 && <Image src={whatWeDoImage3.imageUrl} alt={whatWeDoImage3.description} width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
+              <CardHeader>
+                <CardTitle className="font-headline">Advocacy & Awareness</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">We are a voice for the voiceless, raising awareness about critical issues affecting children.</p>
+              </CardContent>
+              <CardFooter>
+                <Button variant="link" asChild className="p-0 font-semibold">
+                  <Link href="/about">About Us <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                </Button>
+              </CardFooter>
+            </Card>
           </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-primary/5">
-          <div className="container mx-auto px-4">
-              <div className="grid items-center gap-12 md:grid-cols-2">
-                  <div>
-                      <p className="font-semibold uppercase tracking-wider text-primary">Our Impact</p>
-                      <h2 className="mt-2 font-headline text-3xl font-bold md:text-4xl">The Foundation's Difference</h2>
-                      <div className="mt-8 grid grid-cols-2 gap-8">
-                          <div>
-                              <p className="font-headline text-5xl font-bold text-accent">2M+</p>
-                              <p className="mt-2 text-muted-foreground">Lives Touched Globally</p>
-                          </div>
-                          <div>
-                              <p className="font-headline text-5xl font-bold text-accent">1,105</p>
-                              <p className="mt-2 text-muted-foreground">Community Projects</p>
-                          </div>
-                          <div>
-                              <p className="font-headline text-5xl font-bold text-accent">1,489</p>
-                              <p className="mt-2 text-muted-foreground">Children Sponsored</p>
-                          </div>
-                          <div>
-                              <p className="font-headline text-5xl font-bold text-accent">5,642</p>
-                              <p className="mt-2 text-muted-foreground">Volunteers Engaged</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div className="relative h-96 md:h-[400px] rounded-lg overflow-hidden">
-                      <Image
-                          src={PlaceHolderImages.find(p => p.id === 'foundation-difference')?.imageUrl || ''}
-                          alt={PlaceHolderImages.find(p => p.id === 'foundation-difference')?.description || ''}
-                          data-ai-hint={PlaceHolderImages.find(p => p.id === 'foundation-difference')?.imageHint || ''}
-                          fill
-                          className="rounded-lg shadow-xl object-cover"
-                      />
-                  </div>
-              </div>
-          </div>
-      </section>
-
-      <section className="py-16 md:py-24 bg-foreground text-background">
+      <section className="bg-foreground text-background py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid items-center gap-16 md:grid-cols-2">
             <div>
-              <h2 className="font-headline text-3xl font-bold md:text-4xl text-primary-foreground">Resources For Organizations</h2>
+              <h2 className="font-headline text-3xl font-bold md:text-4xl text-primary-foreground">A Lifeline of Hope and Opportunity</h2>
               <p className="mt-4 text-muted">
-                We provide resources and support for organizations that share our vision. Explore our materials to help you make a difference in your community.
+                Our programs are meticulously designed to address the most critical needs of children in impoverished communities. We believe in a holistic approach, ensuring that every child receives the care, education, and support needed to not just survive, but thrive.
               </p>
-              <Accordion type="single" collapsible className="w-full mt-6">
-                <AccordionItem value="item-1" className="border-border/20">
-                  <AccordionTrigger className="hover:no-underline text-primary-foreground/90">Music & Arts</AccordionTrigger>
-                  <AccordionContent className="text-muted">
-                    Discover programs and toolkits to bring creative arts and music education to children.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2" className="border-border/20">
-                  <AccordionTrigger className="hover:no-underline text-primary-foreground/90">Sports & Fitness</AccordionTrigger>
-                  <AccordionContent className="text-muted">
-                    Access guides and resources for setting up sports activities that promote teamwork and health.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3" className="border-border/20">
-                  <AccordionTrigger className="hover:no-underline text-primary-foreground/90">Academic Support</AccordionTrigger>
-                  <AccordionContent className="text-muted">
-                    Find materials for tutoring, mentorship, and after-school programs to boost academic performance.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <div className="mt-8 space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                    <GraduationCap className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-primary-foreground">Education for All</h3>
+                    <p className="text-muted">From building schools to providing scholarships, we make education accessible.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                    <Heart className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-primary-foreground">Health & Nutrition</h3>
+                    <p className="text-muted">We ensure children have access to healthcare, clean water, and nutritious food.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                    <Briefcase className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-primary-foreground">Livelihood Programs</h3>
+                    <p className="text-muted">We empower families with skills and resources to achieve financial stability.</p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden">
               <Image
@@ -258,47 +262,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="py-16 md:py-24">
-          <div className="container mx-auto px-4">
-              <div className="text-center">
-                  <p className="font-semibold uppercase tracking-wider text-primary">Featured News</p>
-                  <h2 className="mt-2 font-headline text-3xl font-bold md:text-4xl">Latest Updates from Our Foundation</h2>
-              </div>
-              <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-                  <Card className="overflow-hidden">
-                      <CardHeader className="p-0">
-                          <Image src={PlaceHolderImages.find(p => p.id === 'news-1')?.imageUrl || ''} alt="News 1" width={600} height={400} className="object-cover" />
-                      </CardHeader>
-                      <CardContent className="p-6">
-                          <CardDescription>Oct 20, 2023</CardDescription>
-                          <CardTitle className="mt-2 text-xl font-headline">Annual Community Gala Raises Record Donations</CardTitle>
-                          <p className="mt-2 text-sm text-muted-foreground">Our annual gala was a huge success, bringing together supporters and raising funds for upcoming projects.</p>
-                      </CardContent>
-                  </Card>
-                  <Card className="overflow-hidden">
-                      <CardHeader className="p-0">
-                          <Image src={PlaceHolderImages.find(p => p.id === 'news-2')?.imageUrl || ''} alt="News 2" width={600} height={400} className="object-cover" />
-                      </CardHeader>
-                      <CardContent className="p-6">
-                          <CardDescription>Sep 15, 2023</CardDescription>
-                          <CardTitle className="mt-2 text-xl font-headline">New Literacy Program Launched in 5 Villages</CardTitle>
-                          <p className="mt-2 text-sm text-muted-foreground">We're excited to launch a new program focused on improving reading and writing skills for over 200 children.</p>
-                      </CardContent>
-                  </Card>
-                  <Card className="overflow-hidden">
-                      <CardHeader className="p-0">
-                          <Image src={PlaceHolderImages.find(p => p.id === 'news-3')?.imageUrl || ''} alt="News 3" width={600} height={400} className="object-cover" />
-                      </CardHeader>
-                      <CardContent className="p-6">
-                          <CardDescription>Aug 01, 2023</CardDescription>
-                          <CardTitle className="mt-2 text-xl font-headline">Volunteers Complete Construction of a New Library</CardTitle>
-                          <p className="mt-2 text-sm text-muted-foreground">A dedicated team of volunteers has completed a new library, providing access to thousands of books.</p>
-                      </CardContent>
-                  </Card>
-              </div>
-          </div>
       </section>
 
       <section className="py-16 md:py-24">
