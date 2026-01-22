@@ -5,6 +5,7 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function AboutPage() {
   const whoWeAreHero = PlaceHolderImages.find(p => p.id === 'group-happy-children');
@@ -74,17 +75,42 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-foreground text-background py-16 md:py-24">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center">
             <h2 className="font-headline text-3xl font-bold text-primary-foreground md:text-4xl">Our Core Values</h2>
           </div>
-          <div className="mt-12 grid grid-cols-2 gap-8 text-center md:grid-cols-5">
-            <div className="font-semibold">Empathy</div>
-            <div className="font-semibold">Integrity</div>
-            <div className="font-semibold">Empowerment</div>
-            <div className="font-semibold">Inclusive</div>
-            <div className="font-semibold">Sustainability</div>
-          </div>
+          <Accordion type="single" collapsible className="w-full mt-12">
+            <AccordionItem value="item-1" className="border-border/20">
+              <AccordionTrigger className="hover:no-underline text-primary-foreground/90 font-semibold text-lg">Empathy</AccordionTrigger>
+              <AccordionContent className="text-muted">
+                We listen and connect with compassion, understanding the unique needs and perspectives of every child and community we serve.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2" className="border-border/20">
+              <AccordionTrigger className="hover:no-underline text-primary-foreground/90 font-semibold text-lg">Integrity</AccordionTrigger>
+              <AccordionContent className="text-muted">
+                We act with honesty and transparency in all we do, ensuring that our actions are always aligned with our mission and the trust placed in us.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3" className="border-border/20">
+              <AccordionTrigger className="hover:no-underline text-primary-foreground/90 font-semibold text-lg">Empowerment</AccordionTrigger>
+              <AccordionContent className="text-muted">
+                We equip children and communities with the tools, knowledge, and opportunities they need to build their own successful futures.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4" className="border-border/20">
+              <AccordionTrigger className="hover:no-underline text-primary-foreground/90 font-semibold text-lg">Inclusive</AccordionTrigger>
+              <AccordionContent className="text-muted">
+                We embrace diversity in all its forms and are committed to creating an environment where everyone has a voice and feels a sense of belonging.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-5" className="border-border/20">
+              <AccordionTrigger className="hover:no-underline text-primary-foreground/90 font-semibold text-lg">Sustainability</AccordionTrigger>
+              <AccordionContent className="text-muted">
+                We focus on creating lasting, self-sustaining impact that endures for generations, ensuring that our work continues to make a difference long into the future.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 
