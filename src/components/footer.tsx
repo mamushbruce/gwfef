@@ -27,7 +27,7 @@ export function Footer() {
           <div>
             <h3 className="font-headline font-semibold tracking-wider text-background">Contact Us</h3>
             <ul className="mt-4 space-y-3">
-              <li>info@godswillfoundation.org</li>
+              <li>info@godswillforeternityfoundation.org</li>
               <li>+256 787 610 197</li>
               <li>Budondo, Northern division, Jinja, Uganda</li>
             </ul>
