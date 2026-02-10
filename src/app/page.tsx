@@ -123,17 +123,17 @@ export default function HomePage() {
                </div>
             </Card>
 
-            <Card className="group relative col-span-1 row-span-1 flex flex-col justify-end overflow-hidden bg-primary text-primary-foreground transition-transform duration-300 ease-in-out hover:scale-[1.02] hover:shadow-xl lg:col-span-1">
-              <div className="p-6">
-                <h3 className="font-headline text-5xl font-bold">500+</h3>
-                <p className="mt-1">Children sponsored and futures changed.</p>
+            <Card className="group relative col-span-1 row-span-1 flex flex-col justify-center overflow-hidden bg-primary text-primary-foreground transition-transform duration-300 ease-in-out hover:scale-[1.02] hover:shadow-xl lg:col-span-1">
+              <div className="p-6 text-center">
+                <h3 className="font-headline text-3xl font-bold">Futures Changed</h3>
+                <p className="mt-1">Countless children sponsored, transforming their lives.</p>
               </div>
             </Card>
 
-            <Card className="group relative col-span-1 row-span-1 flex flex-col justify-end overflow-hidden bg-accent text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-[1.02] hover:shadow-xl lg:col-span-1">
-              <div className="p-6">
-                <h3 className="font-headline text-5xl font-bold">$1M+</h3>
-                <p className="mt-1">Raised for education, health & care.</p>
+            <Card className="group relative col-span-1 row-span-1 flex flex-col justify-center overflow-hidden bg-accent text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-[1.02] hover:shadow-xl lg:col-span-1">
+              <div className="p-6 text-center">
+                <h3 className="font-headline text-3xl font-bold">Vital Funds Raised</h3>
+                <p className="mt-1">Supporting education, health, and care programs.</p>
               </div>
             </Card>
 
@@ -165,15 +165,15 @@ export default function HomePage() {
         <div className="container mx-auto grid grid-cols-1 gap-y-12 px-4 md:grid-cols-3 md:gap-x-12">
           <div className="text-center">
             <h3 className="font-headline text-3xl font-bold">Empowering Children</h3>
-            <p className="mt-2 text-lg text-primary-foreground/80">We empower children for a brighter future through our educational and support programs.</p>
+            <p className="mt-2 text-lg text-primary-foreground/80">Our educational and support programs empower children for a brighter future.</p>
           </div>
           <div className="text-center">
             <h3 className="font-headline text-3xl font-bold">Serving Communities</h3>
             <p className="mt-2 text-lg text-primary-foreground/80">We build local capacity and provide resources to uplift entire communities.</p>
           </div>
           <div className="text-center">
-            <h3 className="font-headline text-3xl font-bold">Direct Impact</h3>
-            <p className="mt-2 text-lg text-primary-foreground/80">Your donation goes directly to our programs, ensuring maximum impact.</p>
+            <h3 className="font-headline text-3xl font-bold">Creating Direct Impact</h3>
+            <p className="mt-2 text-lg text-primary-foreground/80">Your donation goes directly to our programs, ensuring maximum positive change.</p>
           </div>
         </div>
       </section>
