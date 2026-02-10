@@ -13,7 +13,7 @@ export default function Home() {
   const impactImage = PlaceHolderImages.find(p => p.id === 'story-community-build');
   const whatWeDoImage1 = PlaceHolderImages.find(p => p.id === 'sponsorship-hero');
   const whatWeDoImage2 = PlaceHolderImages.find(p => p.id === 'impact-hero');
-  const whatWeDoImage3 = PlaceHolderImages.find(p => p.id === 'story-graduation-day');
+  const whatWeDoImage3 = PlaceHolderImages.find(p => p.id === 'story-graduation-day');  
 
   return (
     <div className="flex flex-col">

@@ -3,13 +3,13 @@
     {
       "id": "hero-children-reading",
       "description": "Group of children reading books together outdoors.",
-      "imageUrl": "https://images.unsplash.com/photo-1549737221-bef65e2604a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaGlsZHJlbiUyMHJlYWRpbmd8ZW58MHx8fHwxNzY5MDAwNDgwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/header.jpeg",
       "imageHint": "children reading"
     },
     {
       "id": "group-happy-children",
       "description": "A diverse group of happy children playing together.",
-      "imageUrl": "https://images.unsplash.com/photo-1607453998774-d533f65dac99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxoYXBweSUyMGNoaWxkcmVufGVufDB8fHx8MTc2OTAzNTYxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/header2.jpeg",
       "imageHint": "happy children"
     },
     {
@@ -51,13 +51,13 @@
     {
       "id": "story-community-build",
       "description": "Community members working together to build a new school.",
-      "imageUrl": "https://images.unsplash.com/photo-1468421870903-4df1664ac249?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb21tdW5pdHklMjBidWlsZGluZ3xlbnwwfHx8fDE3NjkwMzU2MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/group2.jpeg",
       "imageHint": "community building"
     },
     {
       "id": "story-graduation-day",
       "description": "A student celebrating on graduation day.",
-      "imageUrl": "https://images.unsplash.com/photo-1631131426242-0abfa7f209c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdHVkZW50JTIwZ3JhZHVhdGlvbnxlbnwwfHx8fDE3NjkwMzU2MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/group.jpeg",
       "imageHint": "student graduation"
     },
     {
@@ -75,7 +75,7 @@
     {
       "id": "sponsorship-hero",
       "description": "A sponsor and child writing letters to each other.",
-      "imageUrl": "https://images.unsplash.com/photo-1560785496-3c9d27877182?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaGlsZCUyMHdyaXRpbmd8ZW58MHx8fHwxNzY5MDM1NjEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/banner.jpeg",
       "imageHint": "child writing"
     },
     {
@@ -93,37 +93,37 @@
     {
       "id": "resources-orgs",
       "description": "People collaborating in a community meeting.",
-      "imageUrl": "https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21tdW5pdHklMjBtZWV0aW5nfGVufDB8fHx8MTc2OTA2OTk0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/mat.jpeg",
       "imageHint": "community meeting"
     },
     {
       "id": "news-1",
       "description": "A community event.",
-      "imageUrl": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb21tdW5pdHklMjBldmVudHxlbnwwfHx8fDE3NjkwMTM2NDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/one.jpeg",
       "imageHint": "community event"
     },
     {
       "id": "news-2",
       "description": "Children studying together.",
-      "imageUrl": "https://images.unsplash.com/photo-1606546417087-822836c1d0b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaGlsZHJlbiUyMHN0dWR5aW5nfGVufDB8fHx8MTc2OTA3MTkxMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/two.jpeg",
       "imageHint": "children studying"
     },
     {
       "id": "news-3",
       "description": "A newly built school building.",
-      "imageUrl": "https://images.unsplash.com/photo-1728206348193-9b5ae74a7d32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzY2hvb2wlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjkwMTE0NjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/three.jpeg",
       "imageHint": "school building"
     },
     {
       "id": "impact-hero",
       "description": "Children in a classroom raising their hands.",
-      "imageUrl": "https://images.unsplash.com/photo-1588072432904-886af171a3c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGNsYXNzcm9vbXxlbnwwfHx8fDE3NjkwOTAwODB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/header3.jpeg",
       "imageHint": "children classroom"
     },
     {
       "id": "impact-life",
       "description": "A woman helping a child in a rural community.",
-      "imageUrl": "https://images.unsplash.com/photo-1488521787991-ed7b2f28a727?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY2hpbGRyZW4lMjBoZWxwJTIwY29tbXVuaXR5fGVufDB8fHx8MTc2OTM5MjQwMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/five.jpeg",
       "imageHint": "community help"
     }
   ]
