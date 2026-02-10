@@ -1,19 +1,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen, HeartHandshake, Users, Briefcase, GraduationCap, Heart, HandHelping } from "lucide-react";
+import { ArrowRight, BookOpen, HeartHandshake, Users, Briefcase, GraduationCap, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { children } from "@/lib/data";
 
-export default function Home() {
+export default function HomePage() {
   const featuredChild = children.find(c => c.id === 1);
   const missionImage = PlaceHolderImages.find(p => p.id === 'group-happy-children');
   const impactImage = PlaceHolderImages.find(p => p.id === 'story-community-build');
-  const whatWeDoImage1 = PlaceHolderImages.find(p => p.id === 'sponsorship-hero');
-  const whatWeDoImage2 = PlaceHolderImages.find(p => p.id === 'impact-hero');
-  const whatWeDoImage3 = PlaceHolderImages.find(p => p.id === 'story-graduation-day');  
+  const whatWeDoImage1 = PlaceHolderImages.find(p => p.id === 'child-portrait-3');
+  const whatWeDoImage2 = PlaceHolderImages.find(p => p.id === 'story-community-build');
+  const whatWeDoImage3 = PlaceHolderImages.find(p => p.id === 'hero-children-reading');
+  const whatWeDoImage4 = PlaceHolderImages.find(p => p.id === 'impact-life');  
 
   return (
     <div className="flex flex-col">
@@ -189,49 +190,48 @@ export default function Home() {
               We are dedicated to breaking the cycle of poverty and building a hopeful future for every child. Through our comprehensive programs, we provide not just aid, but empowerment.
             </p>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             <Card className="group relative flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
-              {whatWeDoImage1 && <Image src={whatWeDoImage1.imageUrl} alt={whatWeDoImage1.description} data-ai-hint={whatWeDoImage1.imageHint} width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
+              {whatWeDoImage1 && <Image src={whatWeDoImage1.imageUrl} alt="Children's Home Services" data-ai-hint="child care" width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
               <CardHeader>
-                <CardTitle className="font-headline">Child Sponsorship</CardTitle>
+                <CardTitle className="font-headline">Children’s Home Services</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">Transform a child's life through education, healthcare, and community support.</p>
+                <p className="text-muted-foreground">Emergency shelter, healing, medical support, and family reintegration.</p>
               </CardContent>
-              <CardFooter>
-                <Button variant="link" asChild className="p-0 font-semibold">
-                  <Link href="/sponsorship">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                </Button>
-              </CardFooter>
             </Card>
             <Card className="group relative flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
-              {whatWeDoImage2 && <Image src={whatWeDoImage2.imageUrl} alt={whatWeDoImage2.description} data-ai-hint={whatWeDoImage2.imageHint} width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
+              {whatWeDoImage2 && <Image src={whatWeDoImage2.imageUrl} alt="Community Outreach" data-ai-hint="community outreach" width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
               <CardHeader>
-                <CardTitle className="font-headline">Community Empowerment</CardTitle>
+                <CardTitle className="font-headline">Community Outreach</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">We equip communities with the tools for sustainable growth and self-sufficiency.</p>
+                <p className="text-muted-foreground">Skills development, economic empowerment, and community education.</p>
               </CardContent>
-              <CardFooter>
-                <Button variant="link" asChild className="p-0 font-semibold">
-                  <Link href="/impact">See Our Impact <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                </Button>
-              </CardFooter>
             </Card>
             <Card className="group relative flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
-              {whatWeDoImage3 && <Image src={whatWeDoImage3.imageUrl} alt={whatWeDoImage3.description} data-ai-hint={whatWeDoImage3.imageHint} width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
+              {whatWeDoImage3 && <Image src={whatWeDoImage3.imageUrl} alt="Education Support" data-ai-hint="child studying" width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
               <CardHeader>
-                <CardTitle className="font-headline">Advocacy & Awareness</CardTitle>
+                <CardTitle className="font-headline">Education Support</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">We are a voice for the voiceless, raising awareness about critical issues affecting children.</p>
+                <p className="text-muted-foreground">Ensuring school access and providing necessary learning materials.</p>
               </CardContent>
-              <CardFooter>
-                <Button variant="link" asChild className="p-0 font-semibold">
-                  <Link href="/about">About Us <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                </Button>
-              </CardFooter>
             </Card>
+            <Card className="group relative flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
+              {whatWeDoImage4 && <Image src={whatWeDoImage4.imageUrl} alt="Discipleship & Spiritual Development" data-ai-hint="spiritual guidance" width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
+              <CardHeader>
+                <CardTitle className="font-headline">Spiritual Development</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">Faith formation and moral guidance through discipleship and service.</p>
+              </CardContent>
+            </Card>
+          </div>
+           <div className="text-center mt-12">
+            <Button asChild size="lg" variant="outline">
+              <Link href="/what-we-do">Learn More About What We Do <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -301,3 +301,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

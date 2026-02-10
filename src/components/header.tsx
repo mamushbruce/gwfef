@@ -15,6 +15,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/sponsorship", label: "Sponsorship" },
   { href: "/impact", label: "Impact" },
+  { href: "/what-we-do", label: "What We Do" },
   { href: "/about", label: "About" },
 ];
 
