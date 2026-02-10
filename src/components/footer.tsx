@@ -1,6 +1,7 @@
 
 import Link from "next/link";
-import { HandHeart, Twitter, Facebook, Instagram } from "lucide-react";
+import { Twitter, Facebook, Instagram } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -50,7 +51,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between border-t border-border/20 pt-8 sm:flex-row">
             <Link href="/" className="mb-4 inline-flex items-center gap-2 sm:mb-0">
-                <HandHeart className="h-6 w-6 text-primary" />
+                <Image src="/logo.jpeg" alt="Gods Will for Eternity Foundation Logo" width={24} height={24} className="h-6 w-6" />
                 <span className="font-headline text-lg font-bold text-background">Gods Will for Eternity Foundation</span>
             </Link>
           <p className="text-sm">

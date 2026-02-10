@@ -1,15 +1,15 @@
-
 "use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { HandHeart, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -52,7 +52,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center px-4">
         <Link href="/" className="mr-6 flex items-center gap-2">
-          <HandHeart className="h-6 w-6 text-primary" />
+          <Image src="/logo.jpeg" alt="Gods Will for Eternity Foundation Logo" width={24} height={24} className="h-6 w-6" />
           <span className="font-headline text-lg font-bold">Gods Will for Eternity Foundation</span>
         </Link>
         
@@ -106,7 +106,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left">
                <Link href="/" className="mr-6 flex items-center gap-2 mb-8" onClick={() => setIsMobileMenuOpen(false)}>
-                <HandHeart className="h-6 w-6 text-primary" />
+                <Image src="/logo.jpeg" alt="Gods Will for Eternity Foundation Logo" width={24} height={24} className="h-6 w-6" />
                 <span className="font-headline text-lg font-bold">Gods Will for Eternity Foundation</span>
               </Link>
               <div className="flex flex-col gap-6">

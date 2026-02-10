@@ -15,9 +15,10 @@ import {
   SidebarInset,
 } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { HandHeart, LayoutDashboard, Users, BookOpen, HeartHandshake, LogOut } from "lucide-react";
+import { LayoutDashboard, Users, BookOpen, HeartHandshake, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const adminNavLinks = [
     { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -36,8 +37,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <SidebarHeader>
               <div className="flex items-center gap-2">
                  <Link href="/" className="flex items-center gap-2">
-                    <HandHeart className="h-6 w-6 text-primary" />
-                    <span className="font-headline text-lg font-bold">Gods Will for Eternity</span>
+                    <Image src="/logo.jpeg" alt="Gods Will for Eternity Foundation Logo" width={24} height={24} className="h-6 w-6" />
+                    <span className="font-headline text-lg font-bold">Gods Will for Eternity Foundation</span>
                 </Link>
                 <SidebarTrigger className="ml-auto" />
               </div>
