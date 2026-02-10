@@ -164,19 +164,16 @@ export default function HomePage() {
       <section className="bg-primary py-16 text-primary-foreground md:py-24">
         <div className="container mx-auto grid grid-cols-1 gap-y-12 px-4 md:grid-cols-3 md:gap-x-12">
           <div className="text-center">
-            <h3 className="font-headline text-5xl font-bold">200+</h3>
-            <p className="mt-2 text-lg font-semibold uppercase tracking-wider">Children Empowered</p>
-            <p className="mt-2 text-primary-foreground/80">through our educational and support programs.</p>
+            <h3 className="font-headline text-3xl font-bold">Empowering Children</h3>
+            <p className="mt-2 text-lg text-primary-foreground/80">We empower children for a brighter future through our educational and support programs.</p>
           </div>
           <div className="text-center">
-            <h3 className="font-headline text-5xl font-bold">15+</h3>
-            <p className="mt-2 text-lg font-semibold uppercase tracking-wider">Communities Served</p>
-            <p className="mt-2 text-primary-foreground/80">providing resources and building local capacity.</p>
+            <h3 className="font-headline text-3xl font-bold">Serving Communities</h3>
+            <p className="mt-2 text-lg text-primary-foreground/80">We build local capacity and provide resources to uplift entire communities.</p>
           </div>
           <div className="text-center">
-            <h3 className="font-headline text-5xl font-bold">100%</h3>
-            <p className="mt-2 text-lg font-semibold uppercase tracking-wider">Commitment</p>
-            <p className="mt-2 text-primary-foreground/80">of your donation goes directly to our programs.</p>
+            <h3 className="font-headline text-3xl font-bold">Direct Impact</h3>
+            <p className="mt-2 text-lg text-primary-foreground/80">Your donation goes directly to our programs, ensuring maximum impact.</p>
           </div>
         </div>
       </section>
@@ -301,5 +298,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-    
