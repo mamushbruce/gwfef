@@ -177,7 +177,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-{/* //dedicated */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center">
