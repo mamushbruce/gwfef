@@ -32,10 +32,10 @@ export default function HomePage() {
         </div>
         <div className="container relative z-10 mx-auto flex h-full flex-col items-start justify-end px-4 pb-16">
           <h1 className="mb-4 font-headline text-5xl font-bold text-foreground md:text-7xl">
-            Change a Life Today
+            Change a Life Today with GWFEF
           </h1>
           <p className="mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Your contribution provides hope and a future for children in need. Join us in making a lasting impact.
+            Your contribution provides hope and a future disabled and deprived children in our care.
           </p>
           <div className="flex gap-4">
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
@@ -60,7 +60,7 @@ export default function HomePage() {
                 <BookOpen className="h-8 w-8" />
               </div>
               <h3 className="mb-2 font-headline text-2xl font-bold">Education</h3>
-              <p className="text-muted-foreground">Providing quality education and learning resources to unlock each child's potential.</p>
+              <p className="text-muted-foreground">Providing quality education and learning resources to unlock each child's potential."Everubody Needs a change to get educated"</p>
             </div>
             <div className="flex flex-col items-center text-center p-6 rounded-lg transition-all duration-300 hover:bg-primary/5 hover:shadow-lg hover:-translate-y-1">
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -74,7 +74,7 @@ export default function HomePage() {
                 <Users className="h-8 w-8" />
               </div>
               <h3 className="mb-2 font-headline text-2xl font-bold">Community</h3>
-              <p className="text-muted-foreground">Building strong communities that support and uplift children and their families.</p>
+              <p className="text-muted-foreground">Building strong communities that support, love and uplift children as they are by their families.</p>
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function HomePage() {
                 <CardTitle className="font-headline text-3xl">A World Where Every Child Thrives</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">Our foundation is built on the promise of providing love, support, and opportunity to children who need it most.</p>
+                <p className="text-muted-foreground">To Empower and Support Children with Disabilities to make them more Productive and Successful.</p>
               </CardContent>
               <CardFooter>
                  <Button variant="link" asChild className="p-0">
@@ -125,8 +125,8 @@ export default function HomePage() {
 
             <Card className="group relative col-span-1 row-span-1 flex flex-col justify-center overflow-hidden bg-primary text-primary-foreground transition-transform duration-300 ease-in-out hover:scale-[1.02] hover:shadow-xl lg:col-span-1">
               <div className="p-6 text-center">
-                <h3 className="font-headline text-3xl font-bold">Futures Changed</h3>
-                <p className="mt-1">Countless children sponsored, transforming their lives.</p>
+                <h3 className="font-headline text-3xl font-bold">Future's Hope</h3>
+                <p className="mt-1">We hope to save countless children because we don't have that many testimonies of yet.</p>
               </div>
             </Card>
 
