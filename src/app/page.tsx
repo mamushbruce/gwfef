@@ -186,6 +186,8 @@ export default function HomePage() {
               We are dedicated to breaking the cycle of poverty and building a hopeful future for every child. Through our comprehensive programs, we provide not just aid, but empowerment.
             </p>
           </div>
+
+{/* trotts and final changes */}
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             <Card className="group relative flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
               {whatWeDoImage1 && <Image src={whatWeDoImage1.imageUrl} alt="Children's Home Services" data-ai-hint="child care" width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-105" />}
