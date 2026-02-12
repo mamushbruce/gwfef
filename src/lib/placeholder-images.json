@@ -26,9 +26,9 @@
     },
     {
       "id": "child-portrait-3",
-      "description": "Portrait of a smiling young child playing.",
-      "imageUrl": "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaGlsZCUyMHBsYXlpbmd8ZW58MHx8fHwxNzY4OTk4NjE5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "child playing"
+      "description": "Children receiving care at the home.",
+      "imageUrl": "/img/Children_Home_Services.jpeg",
+      "imageHint": "child care"
     },
     {
       "id": "child-portrait-4",
@@ -128,9 +128,9 @@
     },
     {
       "id": "impact-life",
-      "description": "A woman helping a child in a rural community.",
-      "imageUrl": "/img/five.jpeg",
-      "imageHint": "community help"
+      "description": "Children participating in spiritual development activities.",
+      "imageUrl": "/img/Discipleship.jpeg",
+      "imageHint": "spiritual guidance"
     }
   ]
 }
