@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -17,6 +18,7 @@ const navLinks = [
   { href: "/impact", label: "Impact" },
   { href: "/what-we-do", label: "What We Do" },
   { href: "/about", label: "About" },
+  { href: "/team", label: "Our Team" },
 ];
 
 // Mock authentication state
