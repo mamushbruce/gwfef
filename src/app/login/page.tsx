@@ -9,9 +9,9 @@ export default function LoginPage() {
     <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-primary/5 px-4 py-12">
       <Card className="mx-auto w-full max-w-sm">
         <CardHeader>
-          <CardTitle className="font-headline text-2xl">Login</CardTitle>
+          <CardTitle className="font-headline text-2xl">Admin Login</CardTitle>
           <CardDescription>
-            Enter your email below to login to your account
+            This login is for authorized administrators only. Public account registration will be available in a future update.
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
@@ -20,7 +20,7 @@ export default function LoginPage() {
             <Input
               id="email"
               type="email"
-              placeholder="m@example.com"
+              placeholder="admin@example.com"
               required
             />
           </div>
@@ -39,15 +39,6 @@ export default function LoginPage() {
           <Button type="submit" className="w-full">
             Login
           </Button>
-          <Button variant="outline" className="w-full">
-            Login with Google
-          </Button>
-        </CardContent>
-        <CardContent className="mt-0 text-center text-sm">
-          Don&apos;t have an account?{" "}
-          <Link href="/signup" className="underline">
-            Sign up
-          </Link>
         </CardContent>
       </Card>
     </div>
