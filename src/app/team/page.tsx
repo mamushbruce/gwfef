@@ -1,8 +1,7 @@
 
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { UserSquare2 } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const teamMembers = [
     {
@@ -54,6 +53,7 @@ const teamMembers = [
 
 export default function TeamPage() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'about-team');
+  const [executiveDirector, coo, ...otherMembers] = teamMembers;
 
   return (
     <div>
@@ -75,28 +75,64 @@ export default function TeamPage() {
       </section>
       
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-4xl">
-            <div className="text-center">
-                <h2 className="font-headline text-3xl font-bold md:text-4xl text-primary">Our Leadership & Staff</h2>
+        <div className="container mx-auto px-4">
+            <div className="text-center max-w-3xl mx-auto">
+                <h2 className="font-headline text-3xl font-bold md:text-4xl text-primary">Our Organizational Structure</h2>
                 <p className="mt-4 text-lg text-muted-foreground">
                     Our dedicated team is the driving force behind our mission. Each member brings passion, expertise, and unwavering commitment to empowering children and transforming communities.
                 </p>
             </div>
-            <Accordion type="single" collapsible className="w-full mt-12">
-                {teamMembers.map((member, index) => (
-                    <AccordionItem key={index} value={`item-${index + 1}`}>
-                        <AccordionTrigger className="text-lg font-semibold hover:no-underline">
-                            <div className="flex items-center gap-3">
-                                <UserSquare2 className="h-5 w-5 text-primary" />
-                                <span>{member.role}</span>
-                            </div>
-                        </AccordionTrigger>
-                        <AccordionContent className="text-base text-muted-foreground pl-11">
-                            {member.description}
-                        </AccordionContent>
-                    </AccordionItem>
-                ))}
-            </Accordion>
+
+            <div className="mt-20 flex flex-col items-center gap-8 font-headline">
+                {/* Executive Director */}
+                <div className="relative flex flex-col items-center">
+                    <Card className="w-72 text-center shadow-lg z-10">
+                        <CardHeader>
+                            <CardTitle>{executiveDirector.role}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm text-muted-foreground">
+                            <p>{executiveDirector.description}</p>
+                        </CardContent>
+                    </Card>
+                    <div className="absolute top-full h-8 w-0.5 bg-border"></div>
+                </div>
+
+                {/* COO */}
+                <div className="relative flex flex-col items-center pt-8">
+                     <Card className="w-72 text-center shadow-lg z-10">
+                        <CardHeader>
+                            <CardTitle>{coo.role}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm text-muted-foreground">
+                            <p>{coo.description}</p>
+                        </CardContent>
+                    </Card>
+                     <div className="absolute top-full h-8 w-0.5 bg-border"></div>
+                </div>
+
+                {/* Connecting lines */}
+                <div className="w-full max-w-5xl relative pt-8">
+                    <div className="absolute left-1/2 top-0 h-full w-0.5 bg-border -translate-x-1/2"></div>
+                    <div className="absolute left-0 top-0 h-0.5 w-full bg-border"></div>
+                </div>
+
+                {/* Other Members */}
+                <div className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 pt-16">
+                    {otherMembers.map((member, index) => (
+                        <div key={index} className="relative flex flex-col items-center">
+                            <div className="absolute bottom-full h-8 w-0.5 bg-border"></div>
+                            <Card className="w-full text-center shadow-md hover:shadow-xl transition-shadow duration-300">
+                                <CardHeader>
+                                    <CardTitle className="text-xl">{member.role}</CardTitle>
+                                </CardHeader>
+                                <CardContent className="text-sm text-muted-foreground">
+                                    <p>{member.description}</p>
+                                </CardContent>
+                            </Card>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
       </section>
     </div>
