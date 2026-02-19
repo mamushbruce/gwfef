@@ -1,7 +1,11 @@
 
+'use client';
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const teamMembers = [
     {
@@ -55,6 +59,36 @@ export default function TeamPage() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'about-team');
   const [executiveDirector, coo, ...otherMembers] = teamMembers;
 
+  const [isVisible, setIsVisible] = useState(false);
+  const chartRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ref = chartRef.current;
+    if (!ref) return;
+
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                setIsVisible(true);
+                observer.unobserve(entry.target); // Animate only once
+            }
+        },
+        {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        }
+    );
+
+    observer.observe(ref);
+
+    return () => {
+        if (ref) {
+            observer.unobserve(ref);
+        }
+    };
+  }, []);
+
   return (
     <div>
       <section className="relative h-[40vh] min-h-[300px] w-full">
@@ -83,7 +117,7 @@ export default function TeamPage() {
                 </p>
             </div>
 
-            <div className="mt-20 flex flex-col items-center gap-8 font-headline">
+            <div ref={chartRef} className="mt-20 flex flex-col items-center gap-8 font-headline">
                 {/* Executive Director */}
                 <div className="relative flex flex-col items-center">
                     <Card className="w-72 text-center shadow-lg z-10">
@@ -94,7 +128,7 @@ export default function TeamPage() {
                             <p>{executiveDirector.description}</p>
                         </CardContent>
                     </Card>
-                    <div className="absolute top-full h-8 w-0.5 bg-border"></div>
+                    <div className={cn("absolute top-full h-8 w-0.5 bg-border origin-top transition-transform duration-500 ease-out", isVisible ? 'scale-y-100' : 'scale-y-0')}></div>
                 </div>
 
                 {/* COO */}
@@ -107,20 +141,20 @@ export default function TeamPage() {
                             <p>{coo.description}</p>
                         </CardContent>
                     </Card>
-                     <div className="absolute top-full h-8 w-0.5 bg-border"></div>
+                     <div className={cn("absolute top-full h-8 w-0.5 bg-border origin-top transition-transform duration-500 ease-out delay-200", isVisible ? 'scale-y-100' : 'scale-y-0')}></div>
                 </div>
 
                 {/* Connecting lines */}
                 <div className="w-full max-w-5xl relative pt-8">
-                    <div className="absolute left-1/2 top-0 h-full w-0.5 bg-border -translate-x-1/2"></div>
-                    <div className="absolute left-0 top-0 h-0.5 w-full bg-border"></div>
+                    <div className={cn("absolute left-1/2 top-0 h-full w-0.5 bg-border -translate-x-1/2 origin-top transition-transform duration-500 ease-out delay-300", isVisible ? 'scale-y-100' : 'scale-y-0')}></div>
+                    <div className={cn("absolute left-0 top-0 h-0.5 w-full bg-border origin-center transition-transform duration-700 ease-out delay-500", isVisible ? 'scale-x-100' : 'scale-x-0')}></div>
                 </div>
 
                 {/* Other Members */}
                 <div className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 pt-16">
                     {otherMembers.map((member, index) => (
                         <div key={index} className="relative flex flex-col items-center">
-                            <div className="absolute bottom-full h-8 w-0.5 bg-border"></div>
+                            <div className={cn("absolute bottom-full h-8 w-0.5 bg-border origin-bottom transition-transform duration-500 ease-out delay-700", isVisible ? 'scale-y-100' : 'scale-y-0')}></div>
                             <Card className="w-full text-center shadow-md hover:shadow-xl transition-shadow duration-300">
                                 <CardHeader>
                                     <CardTitle className="text-xl">{member.role}</CardTitle>
