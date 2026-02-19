@@ -1,9 +1,7 @@
 
 'use client';
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -56,7 +54,6 @@ const teamMembers = [
 
 
 export default function TeamPage() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'about-team');
   const [executiveDirector, coo, ...otherMembers] = teamMembers;
 
   const [isVisible, setIsVisible] = useState(false);
@@ -91,20 +88,10 @@ export default function TeamPage() {
 
   return (
     <div>
-      <section className="relative h-[40vh] min-h-[300px] w-full">
-        {heroImage && (
-            <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            data-ai-hint={heroImage.imageHint}
-            fill
-            className="object-cover object-center"
-            />
-        )}
-        <div className="absolute inset-0 bg-primary/60" />
-        <div className="container relative mx-auto flex h-full flex-col items-start justify-center px-4 text-left text-white">
-          <p className="font-semibold uppercase tracking-wider">Home / Our Team</p>
-          <h1 className="font-headline text-4xl font-bold md:text-6xl">Meet Our Team</h1>
+      <section className="bg-primary py-20 text-primary-foreground">
+        <div className="container mx-auto px-4">
+          <p className="font-semibold uppercase tracking-wider text-primary-foreground/80">Home / Our Team</p>
+          <h1 className="mt-2 font-headline text-4xl font-bold md:text-5xl">Meet Our Team</h1>
         </div>
       </section>
       
