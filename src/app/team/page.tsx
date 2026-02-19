@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useEffect, useRef, useState } from "react";
@@ -88,7 +87,7 @@ export default function TeamPage() {
 
   return (
     <div>
-      <section className="bg-primary py-20 text-primary-foreground">
+      <section className="py-20 text-primary-foreground bg-gradient-to-r from-primary via-accent to-secondary bg-300% animate-gradient">
         <div className="container mx-auto px-4">
           <p className="font-semibold uppercase tracking-wider text-primary-foreground/80">Home / Our Team</p>
           <h1 className="mt-2 font-headline text-4xl font-bold md:text-5xl">Meet Our Team</h1>
