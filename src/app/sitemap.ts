@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { children, stories } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://godswillforeternityfoundation.org';
+  const baseUrl = 'https://gwfef.org';
 
   const staticRoutes = [
     '/',
